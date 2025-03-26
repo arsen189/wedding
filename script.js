@@ -1,13 +1,15 @@
-document.getElementById("rsvp-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form from submitting
-
+// Basic RSVP form submission handling
+const rsvpForm = document.getElementById("rsvp-form");
+if (rsvpForm) {
+  rsvpForm.addEventListener("submit", function(event) {
+    event.preventDefault();
     const name = document.getElementById("name").value;
-    const attending = document.getElementById("attending").value;
-
-    if (name && attending) {
-        alert(`${name}, your RSVP has been recorded. We'll see you at the wedding!`);
-        document.getElementById("rsvp-form").reset(); // Clear form after submission
+    const attendance = document.getElementById("attendance").value;
+    if (name && attendance) {
+      alert(`${name}, thank you for your RSVP!`);
+      rsvpForm.reset();
     } else {
-        alert("Please fill in all fields.");
+      alert("Please fill out all fields.");
     }
-});
+  });
+}
