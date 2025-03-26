@@ -12,6 +12,7 @@ body {
   line-height: 1.6;
 }
 
+/* Container for content centering */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -22,14 +23,27 @@ body {
 /* Header / Navigation */
 header {
   background: #fff;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 2px solid #f2f2f2;
   padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2em;
+  color: #ff69b4; /* Soft pink accent */
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
 }
 
 nav ul li {
@@ -40,104 +54,35 @@ nav ul li a {
   text-decoration: none;
   color: #333;
   font-weight: 600;
-  transition: color 0.3s ease;
+  padding: 8px 12px;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: #ff69b4; /* Soft pink accent */
-}
-
-/* Hero Section (Home) */
-#hero {
-  text-align: center;
-  padding: 80px 0;
-  background: url('images/hero-bg.jpg') no-repeat center center/cover;
+  background: #ff69b4;
   color: #fff;
 }
 
+/* Hero Section */
+#hero {
+  text-align: center;
+  padding: 120px 20px;
+  color: #fff;
+  background: url('images/hero-bg.jpg') no-repeat center center/cover;
+  /* Fallback color */
+  background-color: #ff69b4;
+}
+
 #hero h1 {
-  font-size: 3em;
+  font-size: 3.5em;
   margin-bottom: 20px;
 }
 
 #hero p {
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin-bottom: 30px;
-}
-
-/* Section Headings & Text */
-section {
-  padding: 60px 0;
-  border-bottom: 1px solid #eaeaea;
-  text-align: center;
-}
-
-section h1,
-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-section p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-/* RSVP Form */
-form {
-  max-width: 500px;
-  margin: 20px auto;
-  text-align: left;
-}
-
-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-form input,
-form select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  width: 100%;
-  padding: 12px;
-  background-color: #ff69b4;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-form button:hover {
-  background-color: #ff4b82;
-}
-
-/* Gallery */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.gallery img {
-  max-width: 300px;
-  margin: 10px;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
 }
 
 /* Footer */
@@ -147,4 +92,5 @@ footer {
   text-align: center;
   padding: 20px 0;
 }
+
 
